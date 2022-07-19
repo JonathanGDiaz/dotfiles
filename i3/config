@@ -13,8 +13,9 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:DejaVuSansMonoNerdFontMono 15
-font pango:monospace 10
+#font pango:DejaVuSansMono Nerd Font mono 15
+font pango:monospace 11
+
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -186,11 +187,11 @@ bindsym $mod+r mode "resize"
 
 #Windows
 # colour of border, background, text, indicator, and child_border
-client.focused              #3B4252 #2f343f #d8dee8 #009f44 #009f44 
-client.focused_inactive     #2E3440 #2f343f #d8dee8 #2E3440 #2f343f
-client.unfocused            #2E3440 #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #3B4252 #2f343f #d8dee8 #3B4252 #009f44
-client.placeholder          #3B4252 #2f343f #d8dee8 #009f44 #2f343f
+client.focused              #b48ead #b48ead #ebcb8b #b48ead #b48ead 
+client.focused_inactive     #3B4252 #2f343f #ebcb8b #2E3440 #2f343f
+client.unfocused            #2E3440 #2f343f #ebcb8b #2f343f #2f343f
+client.urgent               #3B4252 #2f343f #ebcb8b #3B4252 #b48ead
+client.placeholder          #3B4252 #2f343f #ebcb8b #b48ead #2f343f
 client.background           #2f343f
 
 
@@ -219,10 +220,13 @@ mode "move" {
     bindsym Escape mode "default"
 }
 
+#Modify floating mode on start up
+for_window [class="Sxiv" instance="sxiv"] floating enable
+for_window [class="mpv"] floating enable
 
 #Starting programs
 #Background
-exec_always --no-startup-id feh --bg-scale /home/jonathan/Images/Background/forest.jpg
+exec_always --no-startup-id feh --bg-scale /home/jonathan/Images/Background/anime_wp.png
 #Bar
 exec_always --no-startup-id /home/jonathan/.config/polybar/launch.sh
 
