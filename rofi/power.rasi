@@ -1,0 +1,7 @@
+inputbar {
+  children: [promt];
+}
+
+listview {
+	lines: 3;
+}
