@@ -226,15 +226,18 @@ for_window [class="mpv"] floating enable
 
 #Starting programs
 #Background
-exec_always --no-startup-id feh --bg-scale /home/jonathan/Images/Background/anime_wp.png
+exec_always --no-startup-id feh --bg-scale /home/jonathan/Pictures/Background/anime_wp.png
 #Bar
 exec_always --no-startup-id /home/jonathan/.config/polybar/launch.sh
 
 #Custom shortcuts
 bindsym $mod+n exec firefox
-bindsym Print exec flameshot full --path /home/jonathan/Images/Screenshots
+bindsym Print exec flameshot full --path /home/jonathan/Pictures/Screenshots
 bindsym $mod+space exec /home/jonathan/.config/i3/scripts/keyboard.sh
 bindsym $mod+Print exec flameshot gui
+bindsym $mod+Shift+p exec /home/jonathan/.config/rofi/scripts/powermenu.sh
+
+
 #BrightnessUps
 bindsym XF86MonBrightnessUp exec brightnessctl set +5% # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%- # decrease screen brightness
