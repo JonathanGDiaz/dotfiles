@@ -226,10 +226,13 @@ for_window [class="mpv"] floating enable
 
 #Starting programs
 #Background
-exec_always --no-startup-id feh --bg-scale /home/jonathan/Pictures/Background/anime_wp.png
+exec_always --no-startup-id feh --bg-scale /home/jonathan/Pictures/Background/RezeFondo.png
 #Bar
 exec_always --no-startup-id /home/jonathan/.config/polybar/launch.sh
-
+#Compositor
+exec_always --no-startup-id picom
+#Auto mounting 
+exec_always --no-startup-id udiskie &
 #Custom shortcuts
 bindsym $mod+n exec firefox
 bindsym Print exec flameshot full --path /home/jonathan/Pictures/Screenshots
