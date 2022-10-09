@@ -1,0 +1,58 @@
+
+/**
+ * main
+ */
+import java.lang.Math;
+import java.lang.Thread;
+import java.util.Random;
+
+public class Matriz extends Thread {
+  // DECLARACION DE VARIABLES GLOBALES
+  static int m[][] = new int[3][3];
+  static int x = 0, y = 0;
+  static Matriz Hilo1 = new Matriz();
+  static Matriz Hilo2 = new Matriz();
+  // DECLARACION DE BANDERAS
+  static Boolean h1 = false;
+
+  public static void main(String[] args) {
+    // DECLARAMOS LAS VARIABLES
+    int rellenado = 0;
+    Random random = new Random();
+    // RELLENAMOS LA MATRIZ CON NUMEROS ALEATORIOS
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        rellenado = random.nextInt(15);
+        m[i][j] = rellenado;
+        System.out.print(m[i][j]);
+      }
+      System.out.println("");
+    }
+    System.out.println(" ");
+    // Hilo1.run();
+    // Hilo2.run();
+    for (x = 0; x < 3; x++) {
+      for (y = 0; y < 3; y++) {
+        if (!h1) {
+          Hilo1.run();
+          h1 = true;
+        } else {
+          Hilo2.run();
+          h1 = false;
+        }
+      }
+    }
+    // IMPRESION DE MATRIZ CAMBIADA
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        System.out.println(m[i][j]);
+      }
+    }
+    // System.out.println(x);
+  }
+
+  @Override
+  public void run() {
+    m[x][y] = m[x][y] * 2;
+  }
+}

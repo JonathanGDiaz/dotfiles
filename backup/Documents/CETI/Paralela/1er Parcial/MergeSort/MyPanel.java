@@ -1,0 +1,6 @@
+/**
+ * MyPanel
+ */
+public class MyPanel {
+
+}
