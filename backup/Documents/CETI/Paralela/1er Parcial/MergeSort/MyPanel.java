@@ -1,6 +1,0 @@
-/**
- * MyPanel
- */
-public class MyPanel {
-
-}
