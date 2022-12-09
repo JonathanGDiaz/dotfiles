@@ -8,17 +8,17 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Audio
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4% && /home/jonathan/.local/bin/changevolume up 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4% && /home/jonathan/.local/bin/changevolume down
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && /home/jonathan/.local/bin/changevolume mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4% && /home/jonathan/.config/i3/scripts/changevolume up 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4% && /home/jonathan/.config/i3/scripts/changevolume down
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && /home/jonathan/.config/i3/scripts/changevolume mute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 
 #Brightness
-bindsym XF86MonBrightnessUp exec brightnessctl set +5% && /home/jonathan/.local/bin/changebrightness up
-bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && /home/jonathan/.local/bin/changebrightness down
+bindsym XF86MonBrightnessUp exec brightnessctl set +5% && /home/jonathan/.config/i3/scripts/changebrightness up
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%- && /home/jonathan/.config/i3/scripts/changebrightness down
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
