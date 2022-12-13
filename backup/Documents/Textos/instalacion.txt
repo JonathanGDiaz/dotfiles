@@ -1,2 +1,0 @@
-yay -Sy awesome-git picom-git wezterm acpi acpid acpi_call upower lxappearance-gtk3 \
-jq inotify-tools polkit-gnome xdotool gpick redshift maim mpd mpc mpdris2 python-mutagen ncmpcpp playerctl --needed
