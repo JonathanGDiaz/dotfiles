@@ -8,8 +8,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Audio
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +4% && /home/jonathan/.config/i3/scripts/changevolume up 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -4% && /home/jonathan/.config/i3/scripts/changevolume down
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && /home/jonathan/.config/i3/scripts/changevolume up 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && /home/jonathan/.config/i3/scripts/changevolume down
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && /home/jonathan/.config/i3/scripts/changevolume mute
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle 
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -29,7 +29,8 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # start rofi
-bindsym $mod+d exec --no-startup-id rofi -no-lazy-grab -show drun -modi drun -theme /home/jonathan/.config/i3/rofi.rasi
+bindsym $mod+d exec --no-startup-id rofi -no-lazy-grab -show drun -modi drun 
+# -theme /home/jonathan/.config/i3/rofi.rasi
 
 # change focus
 bindsym $mod+j focus left
@@ -73,7 +74,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space+f focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -175,7 +176,14 @@ mode "move" {
 for_window [class="Sxiv" instance="sxiv"] floating enable
 for_window [class="mpv"] floating enable
 
+#Open a program in a specific workspace
+assign [class="Code"] 3
+assign [class="obs"] 5
+assign [class="discord"] 6
+
 #Starting programs
+#Xresources
+exec_always --no-startup-id xrdb ~/.Xresources
 #Background
 exec_always --no-startup-id feh --bg-scale /home/jonathan/Pictures/Background/PowerCircle.png
 #Bar
@@ -192,6 +200,6 @@ exec --no-startup-id dunst &
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+f exec thunar
 bindsym Print exec flameshot full --path /home/jonathan/Pictures/Screenshots
-bindsym $mod+space exec /home/jonathan/.config/i3/scripts/keyboard.sh
+bindsym $mod+Shift+x exec /home/jonathan/.config/i3/scripts/keyboard.sh
 bindsym $mod+Print exec flameshot gui
 bindsym $mod+Escape exec /home/jonathan/.config/rofi/scripts/powermenu.sh
